@@ -11,11 +11,11 @@
 |
 */
 
-Route::any('/', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
-Route::any('/api', function () {
+Route::post('/api', function () {
     return response()->json([
         'token' => request('g-recaptcha-response')
     ]);
