@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d507954b60e9d22238616daad92f228d",
-    "content-hash": "a208e8a61fc23694e8be7a23201394c1",
+    "hash": "981c9668523ebdb33458daf52e32fc77",
+    "content-hash": "f0748f6858951e952aae614d3d810068",
     "packages": [
         {
             "name": "albertcht/invisible-recaptcha",
-            "version": "v1.6",
+            "version": "dev-multi-forms",
             "source": {
                 "type": "git",
                 "url": "https://github.com/albertcht/invisible-recaptcha.git",
-                "reference": "c17e2328c675bb0fb3a30f177271bec33af785ad"
+                "reference": "8d7db5d710498edc64b7bb8db02b3282b15c5c7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/albertcht/invisible-recaptcha/zipball/c17e2328c675bb0fb3a30f177271bec33af785ad",
-                "reference": "c17e2328c675bb0fb3a30f177271bec33af785ad",
+                "url": "https://api.github.com/repos/albertcht/invisible-recaptcha/zipball/8d7db5d710498edc64b7bb8db02b3282b15c5c7f",
+                "reference": "8d7db5d710498edc64b7bb8db02b3282b15c5c7f",
                 "shasum": ""
             },
             "require": {
@@ -64,7 +64,7 @@
                 "php",
                 "recaptcha"
             ],
-            "time": "2017-07-03 13:17:08"
+            "time": "2017-09-24 12:58:33"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -3706,7 +3706,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "albertcht/invisible-recaptcha": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

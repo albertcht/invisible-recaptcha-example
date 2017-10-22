@@ -48,6 +48,7 @@
             }
         </style>
     </head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <body>
         <div class="flex-center position-ref full-height">
             <div class="content">
@@ -55,21 +56,30 @@
                     Invisible reCAPTCHA - Ajax Example
                 </div>
 
-                g-recaptcha-response: 
-                <div id="g-recaptcha-response">
+                g-recaptcha-response-1: 
+                <div id="g-recaptcha-response-1">
                     not received yet
                 </div>
 
+                g-recaptcha-response-2: 
+                <div id="g-recaptcha-response-2">
+                    not received yet
+                </div>
+
+                {!! Form::open(['url' => '/', 'id' => 'form1']) !!}
+                @captcha()
+                {!! Form::submit('Sumbit', ['id'=>'s1']) !!}
+                {!! Form::close() !!}
+
                 {!! Form::open(['url' => '/']) !!}
                 @captcha()
-                {!! Form::submit('Sumbit') !!}
+                {!! Form::submit('Sumbit2', ['id'=>'s2']) !!}
                 {!! Form::close() !!}
             </div>
         </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript">
-            _submitEvent = function() {
+            $('#s1').on('captcha', function(e) {
                 $.ajax({
                     type: "POST",
                     url: "/api",
@@ -81,13 +91,34 @@
                     success: function(data) {
                         console.log('submit successfully');
                         console.log(data);
-                        $('#g-recaptcha-response').html(data.token)
+                        $('#g-recaptcha-response-1').html(data.token)
                     },
                     error: function(data) {
                         console.log('error');
                     }
                 });
-            };
+                _submitAction = false;
+            });
+            $('#s2').on('captcha', function(e) {
+                $.ajax({
+                    type: "POST",
+                    url: "/api",
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        "g-recaptcha-response": $("#g-recaptcha-response").val()
+                    },
+                    dataType: "json",
+                    success: function(data) {
+                        console.log('submit successfully');
+                        console.log(data);
+                        $('#g-recaptcha-response-2').html(data.token)
+                    },
+                    error: function(data) {
+                        console.log('error');
+                    }
+                });
+                _submitAction = false;
+            });
         </script>
     </body>
 </html>
