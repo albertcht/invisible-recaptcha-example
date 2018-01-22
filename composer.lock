@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/albertcht/invisible-recaptcha.git",
-                "reference": "8d7db5d710498edc64b7bb8db02b3282b15c5c7f"
+                "reference": "4b2902b36ca0bf105915ca4bb3d09547f814be73"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/albertcht/invisible-recaptcha/zipball/8d7db5d710498edc64b7bb8db02b3282b15c5c7f",
-                "reference": "8d7db5d710498edc64b7bb8db02b3282b15c5c7f",
+                "url": "https://api.github.com/repos/albertcht/invisible-recaptcha/zipball/4b2902b36ca0bf105915ca4bb3d09547f814be73",
+                "reference": "4b2902b36ca0bf105915ca4bb3d09547f814be73",
                 "shasum": ""
             },
             "require": {
@@ -64,7 +64,7 @@
                 "php",
                 "recaptcha"
             ],
-            "time": "2017-09-24 12:58:33"
+            "time": "2018-01-22 01:39:51"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
